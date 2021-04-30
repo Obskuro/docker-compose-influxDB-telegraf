@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  influxdb:
+    image: influxdb:2.0.4-alpine
+    volumes:
+      -  influxdb2:/root/influxdb2/data
+      - ./influxdb/influx_config:/influx_config
+      - ./influxdb/apply_config.sh:/docker-entrypoint-initdb.d/apply_config.sh
+    env_file: .env
+    ports:
+      - "8086:8086"
+
+  telegraf:
+    image: telegraf:1.18.1-alpine
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file: .env
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb2:

@@ -3,7 +3,7 @@ can be used for docker swarm
 
 ## Telegraf configuration
 
-Telegraf configured by **telegraf.conf**. Need to add `[[inputs.points]]`, and, if then need, change  `[[outputs.points]]`.
+Telegraf configured by **telegraf.conf**. Need to add `[[inputs.points]]`, and, if then need, change  `[[outputs.points]]`.  
 *In example, standard metrics for Docker are used.*
 
 ## InfluxDB configuration
@@ -12,7 +12,7 @@ InfluxDB configured by **.env** file.
 
 ## For adding boards, tasks, alerts etc. 
 
-Add config in `*.yml` or `*.json` to mounted folder `influx_config`. After starting, they will be applied.
+Add config in `*.yml` or `*.json` to mounted folder `influx_config`. After starting, they will be applied.  
 *In example, standard dashboard for Docker are used.*
 
 ## or
