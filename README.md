@@ -1,4 +1,5 @@
-# docker-compose influxDB with telegraf
+# docker-compose influxDBv2 with telegraf
+
 can be used for docker swarm
 
 ## Telegraf configuration
@@ -10,7 +11,7 @@ Telegraf configured by **telegraf.conf**. Need to add `[[inputs.points]]`, and, 
 
 InfluxDB configured by **.env** file.
 
-## For adding boards, tasks, alerts etc. 
+## To add boards, tasks, alerts, etc. like configs
 
 Add config in `*.yml` or `*.json` to mounted folder `influx_config`. After starting, they will be applied.  
 *In example, standard dashboard for Docker are used.*
@@ -23,13 +24,10 @@ U can add they manually.
 
 ```docker-compose up -d```
 
-## Start by docker swarm 
+## Start by docker swarm
 
 ```docker stack deploy -f docker-compose.yml StackName```
 
-
-
-
 ## License
 
-This project is licensed under the Beer-ware license revision 42
+This project is licensed under the Beer-ware license revision 42.
