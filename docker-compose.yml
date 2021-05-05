@@ -3,7 +3,7 @@ services:
   influxdb:
     image: influxdb:2.0.4-alpine
     volumes:
-      -  influxdb2:/root/influxdb2/data
+      - influxdb2:/var/lib/influxdb2
       - ./influxdb/influx_config:/influx_config
       - ./influxdb/apply_config.sh:/docker-entrypoint-initdb.d/apply_config.sh
     env_file: .env
